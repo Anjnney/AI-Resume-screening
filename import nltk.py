@@ -1,5 +1,16 @@
 import os
 import re
+import nltk
+import pandas as pd
+
+"""nltk.download('punkt')
+
+try:
+    nltk.data.find('tokenizers/punkt')
+    print("✅ NLTK dependencies are installed!")
+except LookupError:
+    print("❌ NLTK dependencies missing! Run: nltk.download('punkt')") """
+
 
 # Folder containing resumes
 RESUME_FOLDER = "Resumes"
@@ -39,10 +50,17 @@ def extract_info(resume_text):
     print("[INFO] Extraction completed!\n")
     return info
 
-def process_resumes():
-    """
-    Reads all resumes from the folder and extracts information.
-    """
+
+
+# ===========================================
+# 📝 [WEEK 1] Resume Processing Function
+# ===========================================
+# This function was implemented in Week 1 to process all resumes in the "Resumes" folder.
+# It reads resume files, extracts key information, and displays results.
+"""def process_resumes():
+    
+Reads all resumes from the folder and extracts information.
+    
     print(f"[INFO] Processing resumes in '{RESUME_FOLDER}' folder...")
 
     if not os.path.exists(RESUME_FOLDER):
@@ -63,5 +81,56 @@ def process_resumes():
     
     print("[INFO] All resumes processed!")
 
+"""
+
+def process_resumes():
+    """
+    Reads all resumes from the folder, extracts information, and saves it to a CSV file.
+    """
+    print(f"[INFO] Processing resumes in '{RESUME_FOLDER}' folder...")
+
+    if not os.path.exists(RESUME_FOLDER):
+        print("[ERROR] Resumes folder not found!")
+        return
+
+    extracted_data = []  # List to store extracted resume data
+
+    for filename in os.listdir(RESUME_FOLDER):
+        file_path = os.path.join(RESUME_FOLDER, filename)
+
+        if os.path.isfile(file_path):
+            print(f"[INFO] Processing file: {filename}")
+
+            with open(file_path, "r", encoding="utf-8") as file:
+                resume_text = file.read()
+
+            extracted_info = extract_info(resume_text)
+            extracted_info["filename"] = filename  # Add filename for reference
+            extracted_data.append(extracted_info)
+
+            print(f"[RESULT] Extracted Data from {filename}: {extracted_info}\n")
+
+    # Convert list of extracted data to DataFrame
+    df = pd.DataFrame(extracted_data)
+
+
+    # clean data: convert skills to lowercase
+    df['skills'] = df['skills'].str.lower()
+
+    #Replace "Not found" phone numbers with None
+    df['phone'] = df['phone'].replace("Not found", None)
+
+    # Save to CSV
+    csv_file = "extracted_resumes.csv"
+    df.to_csv(csv_file, index=False)
+    
+    print(f"[INFO] All resumes processed! Data saved to {csv_file}")
+    print("\n[INFO] Extracted Data in Table Format:")
+    print(df.to_string(index=False))  # Ensures a clean table format
+
+
+
 # Run the processing function
 process_resumes()
+
+
