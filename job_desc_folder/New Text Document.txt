@@ -1,0 +1,57 @@
+What is a Senior IT Administrator?
+A Senior IT Administrator plays a crucial role in the technological backbone of a company, overseeing the operation, maintenance, and security of IT systems and services. This individual ensures that all components of the organization’s IT infrastructure, from hardware and software to network and cloud services, function efficiently and securely.
+
+Their expertise enables them to manage complex IT environments, making strategic decisions to improve and optimize the company’s technological resources.
+
+What does a Senior IT Administrator do?
+A Senior IT Administrator is responsible for the smooth operation of an organization’s IT infrastructure. This includes configuring and managing cloud services, troubleshooting IT issues, and providing direct support to employees for any technology-related concerns.
+
+They are also in charge of implementing IT system enhancements and modifications, managing the IT inventory, and ensuring the organization’s IT processes align with business goals.
+
+Additionally, they play a key role in employee onboarding/offboarding, training users on new systems, and maintaining vendor relations and license management. Their work supports the overall productivity and efficiency of the company by ensuring that all team members have the IT resources they need to perform their duties effectively.
+
+Senior IT Administrator responsibilities include:
+Managing, configuring, and troubleshooting IT cloud services
+Providing IT support and technical assistance
+Managing the IT aspects of employee onboarding/offboarding
+Maintaining IT documentation and inventory
+Want to generate a unique job description?
+Generate one in seconds with AI
+Looking for a job?
+Find related jobs in Workable’s job board
+Job brief
+We’re seeking a skilled Senior IT Administrator to oversee our IT infrastructure, ensuring optimal performance and security. This role involves managing cloud services, providing IT support, enhancing IT systems, and maintaining documentation.
+
+You’ll be pivotal in supporting our dynamic team by ensuring they have the reliable technology and assistance needed for their roles. Your expertise will contribute to the continuous improvement of our IT processes and the effective management of our IT resources.
+
+Responsibilities
+Work globally across the company as the primary IT contact
+Manage, configure, and troubleshoot IT cloud services (Google, Atlassian, Microsoft)
+Recommend improvements for the organization’s IT systems
+Implement enhancements or modifications to IT tools and processes
+Provide IT support to offices and remote employees
+Offer technical assistance for queries/issues related to computer systems, hardware, network, and services
+Manage employee onboarding/offboarding IT processes
+Maintain inventory of hardware, software, and other IT supplies
+Provide training and orientation on new and modified systems
+Create and maintain IT documentation
+Analyze and recommend optimizations for software-based processes
+Engage in research for new software/tools to support purchasing efforts
+Support in developing and maintaining vendor relations and license management
+Requirements and skills
+Degree in Information Technology, Computer Science, or related discipline
+2-5 years of experience in IT support/administration
+Scripting experience (Python, bash) and understanding of APIs
+Proficient with MacOS and Windows
+Excellent English communication skills
+Experience with cloud or in-house services/systems administration
+Desired: Jira administration, CRM systems, Mobile Device Management (MDM), basic network systems knowledge
+Excellent communication skills, positive attitude, and ability to work effectively in a team
+Post this Senior IT Administrator job to over 200 job boards at once.
+Post this job now
+Frequently asked questions
+What does a Senior IT Administrator do?
+What are the duties and responsibilities of a Senior IT Administrator?
+What makes a good Senior IT Administrator?
+Who does a Senior IT Administrator work with?
+How does a Senior IT Administrator contribute to the company's success?

@@ -1,0 +1,33 @@
+Cyber Security Specialist responsibilities include:
+Safeguarding information system assets 
+Protecting systems by defining access privileges, control structures and resources
+Implementing security improvements
+Want to generate a unique job description?
+Generate one in seconds with AI
+Looking for a job?
+Find related jobs in Workable’s job board
+Job brief
+We are looking for a Cyber Security Specialist to join our team to work closely with the stakeholders to ensure that cyber security projects meet objectives across our organization. They are responsible for various tasks, including process re-engineering and documentation of activities related to this area. 
+
+A Cyber Security Specialist’s responsibilities include using their skills to detect insecure features and malicious activities within our networks and infrastructure. They will implement customized application security assessments for client-based asset risk, corporate policy compliance as well as conduct vulnerability assessment. They should have an advanced understanding of TCP/IP, common networking ports and protocols, traffic flow, system administration, OSI model, defense-in-depth and common security elements.
+
+The specialist’s focus is not only limited to assessing whether vulnerabilities exist but also how those risks could be mitigated which can help provide organizations with more confidence about system stability going forward.
+
+Ultimately, you will work to ensure the security of our business information, employee data and client information throughout our entire network.
+
+Responsibilities
+Determine security violations and inefficiencies by conducting periodic audits
+Upgrade our network and infrastructure systems 
+Implement and maintain security controls
+Identify and solve potential and actual security problems
+Assess the current situation, evaluating trends and anticipating security requirements
+Keep users informed by preparing performance reports; communicating system status
+Maintain quality service by following organization standards
+Maintain technical knowledge by attending educational workshops
+Contribute to team effort by accomplishing related results as needed
+Requirements and skills
+Proven work experience as a Cyber Security Specialist or similar role
+Hands-on experience analyzing high volumes of logs, network data and other attack artifacts
+Experience with vulnerability scanning solutions
+Proficiency with antivirus and security software
+Bachelor’s degree in Computer Science, Information Systems, or equivalent education or work experience
