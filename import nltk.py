@@ -1,23 +1,22 @@
 import os
-import io
 import re
-from docx import Document
 import nltk
+import spacy
+import streamlit as st
+from docx import Document
+from pypdf import PdfReader
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
-import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
-import streamlit as st
-from pypdf import PdfReader
+from sklearn.metrics.pairwise import cosine_similarity
 
-print("Running script with pypdf, not PyPDF2")  # Debug line
-# Download NLTK resources
+# Download necessary NLTK resources
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-# Load spaCy model for Named Entity Recognition (NER)
+# Load spaCy model
 nlp = spacy.load("en_core_web_sm")
 
 def extract_text_from_docx(uploaded_file):
@@ -38,39 +37,48 @@ def preprocess_text(text):
     lemmatizer = WordNetLemmatizer()
     return ' '.join([lemmatizer.lemmatize(word) for word in tokens if word not in stop_words])
 
-def extract_name_from_text(text):
+def extract_name(text):
     match = re.search(r"([A-Z][a-z]+\s[A-Z][a-z]+)", text)
     return match.group(0) if match else "Name not found"
 
-def extract_email_from_text(text):
+def extract_email(text):
     match = re.search(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", text)
     return match.group(0) if match else "Email not found"
 
-def extract_phone_from_text(text):
+def extract_phone(text):
     match = re.search(r"\+?[0-9]{1,4}?[-.\s]?[0-9]{1,4}[-.\s]?[0-9]{1,4}[-.\s]?[0-9]{1,9}", text)
     return match.group(0) if match else "Phone not found"
 
-def extract_education_from_text(text):
-    match = re.search(r"(B\.Tech|M\.Tech|Bachelor's|Master's|Ph\.D)", text)
+def extract_education(text):
+    match = re.search(r"(B\.Tech|M\.Tech|Bachelor's|Master's|Ph\.D|BSc|MSc|MBA)", text)
     return match.group(0) if match else "Education not found"
 
 def vectorize_text(text_data):
     return TfidfVectorizer(stop_words='english').fit_transform(text_data)
 
+def rank_resume(candidate_text, ideal_candidate_text):
+    vectorizer = TfidfVectorizer(stop_words='english')
+    tfidf_matrix = vectorizer.fit_transform([candidate_text, ideal_candidate_text])
+    similarity_score = cosine_similarity(tfidf_matrix[0], tfidf_matrix[1])[0][0]
+    return round(similarity_score * 100, 2)
+
 def process_resume(text):
     cleaned_text = preprocess_text(text)
     doc = nlp(text)
     entities = [(ent.text, ent.label_) for ent in doc.ents]
-    tfidf_vectorized = vectorize_text([cleaned_text])
+    
+    # Sample ideal candidate profile (modify as needed)
+    ideal_candidate = "B.Tech degree in Computer Science with 3+ years experience in AI and Data Science. Strong Python and Machine Learning skills."
+    ranking_score = rank_resume(cleaned_text, ideal_candidate)
     
     return {
-        'Name': extract_name_from_text(text),
-        'Email': extract_email_from_text(text),
-        'Phone': extract_phone_from_text(text),
-        'Education': extract_education_from_text(text),
+        'Name': extract_name(text),
+        'Email': extract_email(text),
+        'Phone': extract_phone(text),
+        'Education': extract_education(text),
         'Extracted Text Preview': cleaned_text[:200],
         'Named Entities': entities,
-        'TF-IDF Vectors': tfidf_vectorized.toarray()
+        'Resume Match Score (%)': ranking_score
     }
 
 # Streamlit UI
@@ -88,4 +96,4 @@ if uploaded_file:
     
     st.subheader("Extracted Resume Information:")
     for key, value in result.items():
-        st.write(f"**{key}:** {value}")
+        st.write(f"{key}: {value}")
