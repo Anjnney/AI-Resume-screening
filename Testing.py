@@ -1,4 +1,4 @@
-import os
+"""import os
 import re
 import nltk
 import spacy
@@ -106,3 +106,4 @@ if __name__ == "__main__":
     job_description = "We are looking for a Python developer with experience in data science."
     match_score = match_resume_to_job(sample_text, job_description)
     print(f"Resume Match Score: {match_score:.2f}")
+"""
